@@ -1,9 +1,3 @@
- .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
- }
-
  .nav-sub {
     display: flex;
 
@@ -33,13 +27,24 @@
     }
  }
 
- .banner-pro-op {
+ .banner-box {
     display: flex;
 
-    img {
-      display: block;
-      max-width: 50%;
-    }
+    .banner-pro-op {
+      width: 50%;
+      height: 304px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      }     
+
+    .banner-left {
+         background-image: url(https://hexschool.github.io/webLayoutTraining1st/week3/banner-1.png);
+      }
+      
+    .banner-right {
+         background-image: url(https://hexschool.github.io/webLayoutTraining1st/week3/banner-2.png);
+      }
  }
 
  .pro-op-box {
@@ -48,11 +53,11 @@
 
     h2 {
       font-size: $font-lg;
+      margin-bottom: 40px;
 
       span {
          display: inline-block;
          font-size: $font-3m;
-         margin-bottom: 40px;
       }
     }
  }
@@ -124,7 +129,7 @@
  }
 
  .page-list {
-    width: 380px;
+    max-width: 380px;
     margin: 0 auto;
     border: 1px solid $color-neutral-dark;
     display: flex;
@@ -132,7 +137,7 @@
     margin-bottom: 160px;
 
     li {
-       width: 42px;
+       width: 11%;
        border-right: 1px solid $color-neutral-dark;
        font-size: $font-ss;
        color: $color-neutral-dark;
@@ -143,7 +148,7 @@
        }
 
        &:first-child, &:last-child {
-         width: 82px;
+         width: 22%;
          box-sizing: border-box;
   
          a {
@@ -164,10 +169,7 @@
  }
 
 
-@media (max-width: 768px) {
-   .container {
-      max-width: 750px;
-   }
+@include tablet {
 
    .nav-sub {
       li {
@@ -177,7 +179,8 @@
             padding: 14px 0 6px;
    
             img {
-               width: 30px;
+               width: 32px;
+               height: 32px;
             }
          }  
       }
@@ -188,10 +191,10 @@
 
       h2 {
          font-size: $font-3m;
+         margin-bottom: 32px;
 
          span {
             font-size: $font-xm;
-            margin-bottom: 32px;
          }
       }
    }
@@ -212,10 +215,7 @@
    }
 }
 
-@media (max-width: 375px) {
-   .container {
-      max-width: 375px;
-   }
+@include mobile {
 
    .nav-sub {
       li {
@@ -231,8 +231,16 @@
 
             img {
                width: 15px;
+               height: 15px;
+               margin-right: 2px;
             }
          }
+      }
+   }
+
+   .banner-box {
+      .banner-pro-op {
+         height: 148px;
       }
    }
 
@@ -241,10 +249,10 @@
 
       h2 {
          font-size: $font-m;
+         margin-bottom: 20px;
 
          span {
             font-size: $font-s;
-            margin-bottom: 20px;
          }
       }
    }
@@ -253,10 +261,45 @@
       li {
          width: 100%;
          margin-bottom: 32px;
+
+         &:nth-last-child(4), &:nth-last-child(3), , &:nth-last-child(2) {
+            margin-bottom: 32px;
+         }         
+      }
+   }
+
+   .pro-op-txt {
+      font-size: $font-s;
+
+      span {
+         font-size: $font-s;
+      }
+   }
+
+   .pro-op-color {
+      span {
+         width: 16px;
+         height: 16px;
+         margin-right: 4px;
       }
    }
 
    .page-list {
+      max-width: 345px;
       margin-bottom: 56px;
+
+      li {
+         font-size: $font-s;
+
+         &:first-child, &:last-child {
+            a {
+               padding: 10px 12px;
+            }
+         }
+
+         a {
+            padding: 12px 15px;
+         }
+      }
    }
 }
