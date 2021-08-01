@@ -1,0 +1,260 @@
+.header-blog {
+    background: $color-secondary;
+    font-size: $font-m;
+    font-weight: 700;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.nav-blog {
+    width: 484px;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+        a {
+            width: 100%;
+            border-bottom: 4px solid $color-secondary;
+            color: $color-accent;
+            padding: 12px 0 8px;
+
+            &:hover {
+                border-bottom: 4px solid $color-accent;
+            }
+        }
+    }
+}
+
+.search {
+    input {
+        border: none;
+        padding: 8px 0 8px 12px;
+        cursor: pointer;
+        border-radius: 4px;
+        display: none;  //如果有做點擊效果再讓輸入框出現
+
+        &[placeholder] {
+            font-size: $font-s;
+        }
+    } 
+
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 12px;
+    }
+}
+
+
+.blog {
+    padding: 40px 0 96px;
+
+    h2 {
+        @include content-h2; 
+    }
+}
+
+.blog-list {
+    li {
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+
+        img {
+            display: block;
+            width: 57%;
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+}
+
+.blog-intro {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .blog-intro-padlink {
+        display: block;
+        width: 100%;
+    }
+}
+
+.blog-intro-txt {
+    h3 {
+        font-size: $font-3m;
+        color: $color-secondary;
+    }
+
+    .blog-intro-mark {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        font-weight: 600;
+
+        span {
+            color: $color-neutral-dark;
+        }
+    }
+
+    p {
+        font-size: $font-m;
+        color: $color-neutral-dark;
+        text-align: justify;
+    }
+
+}
+
+.blog-more-link {
+    display: block;
+    align-self: flex-end;
+    width: 100px;
+    height: 48px;
+    font-size: $font-4m;
+    font-weight: 900;
+    color: $color-secondary;
+    border-bottom: 4px solid $color-accent;
+
+    &:hover {
+        border-bottom: 4px solid $color-secondary;
+    }
+
+}
+
+.page-list {
+    @include page-list;
+}
+
+
+@include tablet {
+    .header-blog {
+        font-size: $font-s;
+    }
+
+    .nav-blog {
+        width: 374px;
+    }
+
+    .blog {
+        padding: 32px 0 64px;
+    }
+
+    .blog-list {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            img {
+                height: 208px;
+            }
+        }
+    }
+
+
+    .blog-intro-txt {
+
+        h3 {
+            font-size: $font-m;
+        }
+
+        .blog-intro-mark {
+            margin-bottom: 32px;
+
+            p {
+                font-size: $font-s;
+            }
+
+            span {
+                font-size: $font-xs;
+            }
+        }
+
+        p {
+            font-size: $font-xs;
+            overflow:hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+        }
+    }
+
+    .blog-more-link {
+        width: 34px; 
+        height: 18px;
+        font-size: $font-xs;
+        font-weight: 700;
+        text-transform: lowercase;
+        color: $color-neutral-dark;
+        border-bottom: none;
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+}
+
+@include mobile {
+    .header-blog {
+        display: none;
+    }
+
+    .blog {
+        padding: 28px 15px 40px;
+    }
+
+    .blog-list {
+        li {
+            flex-direction: column;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 100%;
+                height: 217px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    .blog-intro {
+        width: 100%;
+    }
+
+    .blog-intro-txt {
+
+        h3 {
+            font-size: $font-s;
+        }
+
+        p {
+            display: none; 
+        }
+
+        .blog-intro-mark {
+            margin-bottom: 0;
+
+            p {
+                display: block;
+                font-size: $font-xs;
+                color: #000;
+            }
+        }
+        
+    }
+
+    .blog-more-link {
+        display: none;
+    }
+}
